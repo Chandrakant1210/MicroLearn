@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="learningApp" ng-controller="LearningController">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online Learning Portal</title>
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="course.css">
+</head>
+
+<body>
+
+
+
+    <!-- ✅ Navbar -->
+    <div class="navbar-fixed">
+        <nav class="transparent z-depth-0" id="navbar">
+            <div class="nav-wrapper container">
+                <!-- Logo + Brand -->
+                <a href="index.html" class="brand-logo">
+                    <img src="./logo.png " alt="MicroLearn Logo" style="height:40px; vertical-align:middle; margin-right:8px;">
+                    <span class="logo-text">MicroLearn</span>
+                </a>
+
+                <!-- Menu Links -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#leaderboard">Leaderboard</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container">
+
+        <!-- Carousel -->
+        <div class="carousel carousel-slider center">
+            <div class="carousel-item green white-text" href="#one!">
+                <h2>CSS Course</h2>
+                <p class="white-text">Learn styling, colors, and layouts</p>
+            </div>
+            <div class="carousel-item light-green white-text" href="#two!">
+                <h2>HTML5 Course</h2>
+                <p class="white-text">Learn structure and semantics</p>
+            </div>
+            <div class="carousel-item lime darken-1 white-text" href="#three!">
+                <h2>JavaScript Course</h2>
+                <p class="white-text">Make websites dynamic & interactive</p>
+            </div>
+            <div class="carousel-item teal white-text" href="#four!">
+                <h2>PHP Course</h2>
+                <p class="white-text">Build powerful backend systems</p>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a href="#cssTab" ng-click="goToSlide(0)">CSS</a></li>
+                    <li class="tab col s3"><a href="#htmlTab" ng-click="goToSlide(1)">HTML5</a></li>
+                    <li class="tab col s3"><a href="#jsTab" ng-click="goToSlide(2)">JavaScript</a></li>
+                    <li class="tab col s3"><a href="#phpTab" ng-click="goToSlide(3)">PHP</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CSS Lessons -->
+        <div id="cssTab" class="col s12 css-theme">
+            <div class="course-header">CSS Lessons</div>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li ng-repeat="lesson in cssLessons">
+                    <div class="collapsible-header">
+                        <i class="material-icons">{{lesson.icon}}</i>{{lesson.title}}
+                    </div>
+                    <div class="collapsible-body">
+                        <a href="./playlist.html">
+                            <p>{{lesson.text}}</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HTML Lessons -->
+        <div id="htmlTab" class="col s12 html-theme">
+            <div class="course-header">HTML5 Lessons</div>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li ng-repeat="lesson in htmlLessons">
+                    <div class="collapsible-header">
+                        <i class="material-icons">{{lesson.icon}}</i>{{lesson.title}}
+                    </div>
+                    <div class="collapsible-body">
+                        <a href="./playlist.html">
+                            <p>{{lesson.text}}</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- JS Lessons -->
+        <div id="jsTab" class="col s12 js-theme">
+            <div class="course-header">JavaScript Lessons</div>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li ng-repeat="lesson in jsLessons">
+                    <div class="collapsible-header">
+                        <i class="material-icons">{{lesson.icon}}</i>{{lesson.title}}
+                    </div>
+                    <div class="collapsible-body">
+                        <a href="./playlist.html">
+                            <p>{{lesson.text}}</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- PHP Lessons -->
+        <div id="phpTab" class="col s12 php-theme">
+            <div class="course-header">PHP Lessons</div>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li ng-repeat="lesson in phpLessons">
+                    <div class="collapsible-header">
+                        <i class="material-icons">{{lesson.icon}}</i>{{lesson.title}}
+                    </div>
+                    <div class="collapsible-body">
+                        <p>{{lesson.text}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- jQuery + Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="course.js"></script>
+</body>
+
+</html>
